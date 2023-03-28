@@ -17,3 +17,27 @@ COPY . .
 
 # Start the Node.js server with Firebase credentials
 CMD ["npm", "start"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
