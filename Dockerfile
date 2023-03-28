@@ -1,10 +1,19 @@
-FROM node:13.14.0-alpine
+# Use a Node.js version 13 base image
+FROM node:13
+
+# Set the working directory to /app
 WORKDIR /app
 
-COPY package.json .
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install dependencies
 RUN npm install -force
 RUN node node_modules/node-sass/scripts/install.js
 RUN npm rebuild node-sass
-RUN npm i node-pre-gyp install
+
+# Copy the rest of the application code to the working directory
 COPY . .
-CMD ["npm","start"]
+
+# Start the Node.js server with Firebase credentials
+CMD ["npm", "start"]
