@@ -668,7 +668,7 @@ class Dashboard extends React.Component {
 
       this.getGainers();
 
-      document.title = "Trader24 - Dashboard";
+      document.title = "Trading Pit - Dashboard";
 
       // STOCK LIST
       this.getStocksList();

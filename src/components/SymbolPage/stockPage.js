@@ -618,7 +618,7 @@ export default class stockPage extends React.Component {
           }
         }.bind(this),
       );
-    document.title = `Trader24 - ${symbol}`;
+    document.title = `Trading Pit - ${symbol}`;
     fetch(
       `https://cloud.iexapis.com/stable/stock/${symbol}/quote?displayPercent=true&token=${process.env.REACT_APP_API_KEY_2}`,
     )
