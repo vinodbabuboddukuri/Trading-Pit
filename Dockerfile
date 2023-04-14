@@ -1,5 +1,5 @@
-# Use a Node.js version 13 base image
-FROM node:13
+# Stage 1 - Build Node.js Application
+FROM node:13 AS build
 
 # Set the working directory to /app
 WORKDIR /app
@@ -15,29 +15,14 @@ RUN npm rebuild node-sass
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Start the Node.js server with Firebase credentials
-CMD ["npm", "start"]
+RUN npm run build
 
+# Stage 2 - Serve Frontend Assets
+FROM fholzer/nginx-brotli:v1.12.2
 
+WORKDIR /etc/nginx
+ADD nginx.conf /etc/nginx/nginx.conf
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 443
+CMD ["nginx", "-g", "daemon off;"]
