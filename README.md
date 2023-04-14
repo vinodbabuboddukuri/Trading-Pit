@@ -50,6 +50,12 @@ To stop the app, use the following command:
   docker-compose down 
 ```
 
+Run the Docker image in a container
+
+```bash
+  docker pull sasikirannallapu/kltrades
+  docker run -p 80:443 sasikirannallapu/kltrades
+```
 
 ## Features
 
