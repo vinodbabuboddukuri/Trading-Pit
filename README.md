@@ -2,7 +2,8 @@
 # Trading Pit
 
 **Trading Pit** is a stock simulator app built with a microservices architecture using Docker and Kubernetes for containerization and orchestration. It offers real-time market data and customizable portfolios, allowing users to practice trading and gain insights into market performance. The simulator can offer various features, such as customizable portfolios, real-time news updates, and analytics dashboards that show users their trading performance over time. The app is ideal for both novice and experienced traders.
-
+## Architecture
+![image](https://user-images.githubusercontent.com/96176689/232232975-73c1359f-496a-4b54-a7e1-0610ca1916c0.png)
 
 ## Tech Stack
 
